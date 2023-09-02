@@ -1,0 +1,519 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000000;
+  font-family: "Inter", sans-serif;
+}
+
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.left-side {
+  flex: 1;
+  max-width: 30%;
+  background-color: #000000;
+  overflow-y: auto;
+  padding: 20px;
+  display: none;
+}
+
+.right-side {
+  flex: 6;
+  background-color: #100f0f;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.social-media-icons {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.social-icon-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.social-text a {
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.social-icon-container:hover {
+  transform: translateY(-5px);
+  background-color: #333;
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.header-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.profile-image {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 70%;
+  border: 3px solid white;
+}
+
+.profile-name {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}
+
+.profile-name a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.follow-button {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.follow-button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.follow-button a {
+  font-size: 14px;
+  color: #a6a6a6;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  max-width: 1350px;
+  width: 100%;
+  margin-bottom: 23px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.textcontent {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  margin: 5px 2px;
+  margin-left: 10px;
+  margin-right: 60px;
+}
+
+.textcontent img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  transition: height 0.3s;
+}
+
+.textcontent:hover .content-overlay {
+  height: 100%;
+  border-radius: 10%;
+}
+
+.content-text {
+  text-align: center;
+  padding: 20px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  border-radius: 30px;
+  padding-bottom: 10px;
+  margin-top: -5px;
+  margin-left: 89%;
+  margin-bottom: -160px;
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 13px 26px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #08a045;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #08a045;
+  border-radius: 30px;
+}
+
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+
+.blob-btn:hover {
+  color: #ffffff;
+  border-radius: 30px;
+}
+
+.blob-btn:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url("#goo");
+}
+
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #08a045;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.7);
+  transition: transform 0.45s;
+}
+
+@supports (filter: url("#goo")) {
+  .blob-btn__blob {
+    transform: translate3d(0, 150%, 0) scale(1.4);
+  }
+}
+
+.blob-btn__blob:nth-child(1) {
+  left: 0%;
+  transition-delay: 0s;
+}
+
+.blob-btn__blob:nth-child(2) {
+  left: 30%;
+  transition-delay: 0.08s;
+}
+
+.blob-btn__blob:nth-child(3) {
+  left: 60%;
+  transition-delay: 0.16s;
+}
+
+.blob-btn__blob:nth-child(4) {
+  left: 90%;
+  transition-delay: 0.24s;
+}
+
+.blob-btn:hover .blob-btn__blob {
+  transform: translateZ(0) scale(1.7);
+}
+
+@supports (filter: url("#goo")) {
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.4);
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  /* Adjust styles for small screens */
+  .row {
+    display: block;
+  }
+  .profile-name {
+    font-size: 14px;
+    top: calc(30% + 80px); 
+    margin-left: 20px;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-name a {
+    font-size: 14px;
+    top: calc(30% + 80px); 
+    margin-left: 20px;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust styles for medium screens */
+  .row {
+    display: block;
+  }
+
+  .profile-name {
+    margin-left: 20px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1225px) {
+  /* Adjust styles for large screens */
+}
+
+@media screen and (min-width: 1225px) {
+  /* Show left-side on larger screens */
+  .left-side {
+    display: block;
+  }
+}
+
+.button-63 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 10px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 70%;
+  min-width: 100px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.button-63:active,
+.button-63:hover {
+  outline: 0;
+}
+
+.button-63 a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+ 
+::-webkit-scrollbar {
+  width: 0.5rem;  
+}
+
+ 
+::-webkit-scrollbar-track {
+  background: transparent;  
+}
+
+ 
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);  
+}
+
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);  
+}
+
+ 
+::-webkit-scrollbar-horizontal {
+  height: 0.5rem;  
+}
+
+ 
+::-webkit-scrollbar-horizontal-track {
+  background: transparent;  
+}
+
+ 
+::-webkit-scrollbar-horizontal-thumb {
+  background: rgba(0, 0, 0, 0);  
+}
+
+ 
+::-webkit-scrollbar-horizontal-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-nav {
+   
+  display: none;  
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;  
+  }
+}
+
+.profile-name {
+  font-size: 16px;
+  margin-top: -30px;
+}
+
+ 
+@media (min-width: 768px) {
+   
+  .profile-name {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 668px) {
+   
+  .profile-name {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+   
+  .profile-name {
+    font-size: 32px;
+  }
+}
+
+ 
+@keyframes float-up {
+  0% {
+    transform: translateY(20px);  
+    opacity: 0;  
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1; 
+  }
+}
+
+.textcontent {
+  opacity: 0;
+}
+
+.animate {
+  animation: float-up 0.9s ease-in-out;
+  opacity: 1;
+}
+
+
+
